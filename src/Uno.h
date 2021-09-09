@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
 
 #define RESET "\e[0m"
 #define BLU "\e[0;34m"

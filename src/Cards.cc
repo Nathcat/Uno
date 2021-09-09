@@ -2,21 +2,21 @@
 
 
 class Card {  // Card parent class
-public:
-  string colour;  // The colour of this card represented by an int
-  string name;  // The name of this card
+  public:
+    string colour;
+    string name;
 
-  string toString() {  // Get a string for this card
-    return colour + name + RESET;
-  }
+    string toString() {
+      return (colour + name + RESET);
+    }
 
-  bool equalTo(Card other) {  // Check if the parameter other is the same as this card
-    return (other.colour == colour) && (other.name == name)
-  }
+    bool isEqual(Card other) {
+      return (other.colour == colour) && (other.name == name);
+    }
 };
 
 
-// Blue Cards
+// Blue cards
 
 class B_0: public Card {
   public: B_0() {
@@ -58,14 +58,12 @@ class B_4: public Card {
 };
 
 
-
 class B_5: public Card {
   public: B_5() {
     colour = BLU;
     name = "5";
   }
 };
-
 
 
 class B_6: public Card {
@@ -108,14 +106,6 @@ class B_add_2: public Card {
 };
 
 
-class B_reverse: public Card {
-  public: B_reverse() {
-    colour = BLU;
-    name = "reverse";
-  }
-};
-
-
 class B_skip: public Card {
   public: B_skip() {
     colour = BLU;
@@ -124,8 +114,15 @@ class B_skip: public Card {
 };
 
 
-// Red cards
+class B_reverse: public Card {
+  public: B_reverse() {
+    colour = BLU;
+    name = "reverse";
+  }
+};
 
+
+// Red cards
 
 class R_0: public Card {
   public: R_0() {
@@ -167,14 +164,12 @@ class R_4: public Card {
 };
 
 
-
 class R_5: public Card {
   public: R_5() {
     colour = RED;
     name = "5";
   }
 };
-
 
 
 class R_6: public Card {
@@ -217,14 +212,6 @@ class R_add_2: public Card {
 };
 
 
-class R_reverse: public Card {
-  public: R_reverse() {
-    colour = RED;
-    name = "reverse";
-  }
-};
-
-
 class R_skip: public Card {
   public: R_skip() {
     colour = RED;
@@ -233,7 +220,15 @@ class R_skip: public Card {
 };
 
 
-// Green Cards
+class R_reverse: public Card {
+  public: R_reverse() {
+    colour = RED;
+    name = "reverse";
+  }
+};
+
+
+// Green cards
 
 class G_0: public Card {
   public: G_0() {
@@ -275,14 +270,12 @@ class G_4: public Card {
 };
 
 
-
 class G_5: public Card {
   public: G_5() {
     colour = GRN;
     name = "5";
   }
 };
-
 
 
 class G_6: public Card {
@@ -325,14 +318,6 @@ class G_add_2: public Card {
 };
 
 
-class G_reverse: public Card {
-  public: G_reverse() {
-    colour = GRN;
-    name = "reverse";
-  }
-};
-
-
 class G_skip: public Card {
   public: G_skip() {
     colour = GRN;
@@ -341,8 +326,15 @@ class G_skip: public Card {
 };
 
 
-// Yellow cards
+class G_reverse: public Card {
+  public: G_reverse() {
+    colour = GRN;
+    name = "reverse";
+  }
+};
 
+
+// Yellow cards
 
 class Y_0: public Card {
   public: Y_0() {
@@ -384,14 +376,12 @@ class Y_4: public Card {
 };
 
 
-
 class Y_5: public Card {
   public: Y_5() {
     colour = YEL;
     name = "5";
   }
 };
-
 
 
 class Y_6: public Card {
@@ -434,14 +424,6 @@ class Y_add_2: public Card {
 };
 
 
-class Y_reverse: public Card {
-  public: Y_reverse() {
-    colour = YEL;
-    name = "reverse";
-  }
-};
-
-
 class Y_skip: public Card {
   public: Y_skip() {
     colour = YEL;
@@ -450,8 +432,15 @@ class Y_skip: public Card {
 };
 
 
-// Special Cards
+class Y_reverse: public Card {
+  public: Y_reverse() {
+    colour = YEL;
+    name = "reverse";
+  }
+};
 
+
+// Special cards
 
 class add_4: public Card {
   public: add_4() {
@@ -461,17 +450,111 @@ class add_4: public Card {
 };
 
 
-class switch: public Card {
-  public: switch() {
+class switch_colour: public Card {
+  public: switch_colour() {
     colour = RESET;
     name = "switch";
   }
 };
 
 
+// Methods
+
+vector<Card> generateDeck() {  // Generate a full Uno game deck
+  vector<Card> deck;
+
+  deck.push_back(B_0());
+  deck.push_back(B_1());
+  deck.push_back(B_2());
+  deck.push_back(B_3());
+  deck.push_back(B_4());
+  deck.push_back(B_5());
+  deck.push_back(B_6());
+  deck.push_back(B_7());
+  deck.push_back(B_8());
+  deck.push_back(B_9());
+  deck.push_back(B_add_2());
+  deck.push_back(B_skip());
+  deck.push_back(B_reverse());
+
+  deck.push_back(R_0());
+  deck.push_back(R_1());
+  deck.push_back(R_2());
+  deck.push_back(R_3());
+  deck.push_back(R_4());
+  deck.push_back(R_5());
+  deck.push_back(R_6());
+  deck.push_back(R_7());
+  deck.push_back(R_8());
+  deck.push_back(R_9());
+  deck.push_back(R_add_2());
+  deck.push_back(R_skip());
+  deck.push_back(R_reverse());
+
+  deck.push_back(G_0());
+  deck.push_back(G_1());
+  deck.push_back(G_2());
+  deck.push_back(G_3());
+  deck.push_back(G_4());
+  deck.push_back(G_5());
+  deck.push_back(G_6());
+  deck.push_back(G_7());
+  deck.push_back(G_8());
+  deck.push_back(G_9());
+  deck.push_back(G_add_2());
+  deck.push_back(G_skip());
+  deck.push_back(G_reverse());
+
+  deck.push_back(Y_0());
+  deck.push_back(Y_1());
+  deck.push_back(Y_2());
+  deck.push_back(Y_3());
+  deck.push_back(Y_4());
+  deck.push_back(Y_5());
+  deck.push_back(Y_6());
+  deck.push_back(Y_7());
+  deck.push_back(Y_8());
+  deck.push_back(Y_9());
+  deck.push_back(Y_add_2());
+  deck.push_back(Y_skip());
+  deck.push_back(Y_reverse());
+
+  deck.push_back(add_4());
+  deck.push_back(add_4());
+  deck.push_back(switch_colour());
+  deck.push_back(switch_colour());
+
+  return deck;
+};
+
+
+vector<Card> generatePlayerDeck(vector<Card>* deck) {  // Generate a deck for the player and update the game deck accordingly
+  vector<Card> player;
+
+  while (player.size() != 7) {
+    int index = rand() % (deck->size());
+
+    player.push_back((*deck)[index]);
+
+    deck->erase(deck->begin() + index);
+  }
+
+  return player;
+};
+
+
+void displayDeck(vector<Card> deck) {  // Display a given deck of cards (deck)
+  for (int x = 0; x < deck.size(); x++) {
+    cout << deck[x].toString() << ", ";
+  }
+
+  cout << endl;
+};
+
+
 class TurnCounter {  // Object to track which player's turn it is
   private:
-    int direction = 1;  // Represents the direction of play
+    int direction = 1;
     int numberOfPlayers;
 
   public:
@@ -491,7 +574,60 @@ class TurnCounter {  // Object to track which player's turn it is
       }
     }
 
-    void changeDirection() {  // Toggle the direction of play
-      direction *= -1;
+    void changeDirection() {  // Toggle direction
+      if (direction == 1) {
+        direction = -1;
+      } else {
+        direction = 1;
+      }
     }
 };
+
+
+string chooseColour() {  // Allow the player to choose a new colour
+  cout << endl << endl << "Choose a new colour:" << endl << "1. Blue" << endl << "2. Red" << endl << "3. Green" << endl << "4. Yellow" << endl << endl;
+
+  int choice;
+
+  while (true) {
+    cout << "Enter the number corresponding to your choice > ";
+    cin >> choice;
+
+    if (choice == 1) {
+      return BLU;
+    } else if (choice == 2) {
+      return RED;
+    } else if (choice == 3) {
+      return GRN;
+    } else if (choice == 4) {
+      return YEL;
+    } else {
+      cout << endl << endl << "Invalid choice, please choose 1, 2, 3, or 4" << endl << endl;
+    }
+  }
+};
+
+
+bool canPlay(vector<Card> cardsPlayed, Card card) {  // Check if the given card (card) can be played
+  Card topCard = cardsPlayed[cardsPlayed.size() - 1];
+
+  bool colour = topCard.colour == card.colour;
+  bool name = topCard.name == card.name;
+  bool isReset = card.colour == RESET;
+
+  return colour || name || isReset;
+}
+
+
+vector<Card> shuffle(vector<Card> deck) {  // Shuffle the deck
+  vector<Card> newDeck;
+
+  while (deck.size() != 0) {
+    int index = rand() % deck.size();
+    newDeck.push_back(deck[index]);
+
+    deck.erase(deck.begin() + index);
+  }
+
+  return newDeck;
+}
