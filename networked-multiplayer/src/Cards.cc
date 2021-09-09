@@ -543,12 +543,14 @@ vector<Card> generatePlayerDeck(vector<Card>* deck) {  // Generate a deck for th
 };
 
 
-void displayDeck(vector<Card> deck) {  // Display a given deck of cards (deck)
+string displayDeck(vector<Card> deck) {  // Display a given deck of cards (deck)
+  string out;
+
   for (int x = 0; x < deck.size(); x++) {
-    cout << deck[x].toString() << ", ";
+    out += deck[x].toString() + ", ";
   }
 
-  cout << endl;
+  return out;
 };
 
 
