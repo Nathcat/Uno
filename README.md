@@ -1,5 +1,5 @@
-<h1>Uno - local multiplayer</h1>
+<h1>Uno</h1>
 
-This branch contains the source code and compiled code for Uno local multiplayer
+This branch contains the source code and compiled code for Uno written in C++.
 
  - Nathcat :P
